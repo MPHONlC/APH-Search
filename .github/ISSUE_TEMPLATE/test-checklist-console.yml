@@ -1,0 +1,88 @@
+name: ✅ APH-Search Test Checklist (Console)
+description: Run through APH-Search's Console test checklist and report results
+title: '[TEST][Console] '
+labels:
+- testing
+assignees:
+- MPHONlC
+body:
+- type: markdown
+  attributes:
+    value: Thanks for testing **APH-Search** on Console! Check off everything you actually tested and confirmed working. Anything broken or partly working, describe it in the notes field at the end instead of checking it off.
+- type: input
+  id: version
+  attributes:
+    label: Add-on version
+    placeholder: e.g. 2026.09.29.21.48
+  validations:
+    required: true
+- type: dropdown
+  id: platform
+  attributes:
+    label: Platform
+    options:
+    - Console (Xbox)
+    - Console (PlayStation)
+  validations:
+    required: true
+- type: checkboxes
+  id: console_tests
+  attributes:
+    label: Console tests confirmed working
+    options:
+    - label: 'Open: Hold the left trigger 1 second (out of combat, no menu open).'
+    - label: 'Prefilled search: Type /fs camera. Then type /fs with nothing after it twice.'
+    - label: 'Combat block: Hold the left trigger in combat.'
+    - label: 'Menu entry: Open the main menu.'
+    - label: 'Scopes: Open the scope list.'
+    - label: 'Recent searches: Search a few different words, close the bar and open it again.'
+    - label: 'Suggestions: Type in the text box.'
+    - label: 'Jumps: Pick a set item, achievement, quest, wayshrine, friend, add-on setting.'
+    - label: 'Quest travel: Pick a quest.'
+    - label: 'Friends: Pick a friend; whisper, then invite.'
+    - label: 'Chat messages: Pick a title you own, clear it, pick a quest with none tracked, and pick something that cannot be opened.'
+    - label: 'Hold trigger setting: Turn Hold the left trigger to open search off and hold the trigger again, then on.'
+    - label: 'Prefer instant results: Turn Prefer instant results on and off and run a first search of a big scope (Items or Set Items).'
+    - label: 'Offer to travel: Turn Offer to travel from the map off and pick a quest, wayshrine and house.'
+    - label: 'Scope ticks: Open What gets searched and look at every tick: Settings, Keybinds, Add-ons, Add-on Settings, Commands, Menus, Achievements, Quests, Antiquities, Map, Wayshrines, Dungeons, Arenas, Trials, Houses, Skills, Champion, Titles, Emotes, Help, Items, Set Items, Collectibles, Allies, Tools, Outfit Styles, Friends, Leaderboards, Crown Store.'
+    - label: 'Match tooltips: Turn Match tooltips and descriptions off and search a word only found in a description.'
+    - label: 'Reset to defaults: Change a few settings and press Reset to Defaults.'
+    - label: 'Settings: Open APH-Search settings.'
+    - label: 'Memory: Search, then wait 2 minutes without searching.'
+    - label: 'Library Warning: On a fresh install (never seen this warning before), disable LibAddonMenu-2.0 (PC) or LibHarvensAddonSettings (console), then open Settings or reload twice in a row.'
+    - label: 'Guide screen arrow: Set a waypoint on the map, close the map and walk a few steps.'
+    - label: 'Guide from search: Pick a quest, then a wayshrine, in Search.'
+    - label: 'Waypoint level: Set a waypoint near stairs or a bridge, walk toward it, then go up or down a floor.'
+    - label: 'Guide settings: Open APH-Search settings > Guide and change Screen arrow height and Guide opacity.'
+    - label: '/fsguide: Type /fsguide twice.'
+    - label: 'Ground arrows without LibImplex: Set a waypoint and walk toward it (LibImplex is not on console).'
+    - label: 'Group marks: In a group where both have APH-Search and LibGroupBroadcast, one sets a waypoint.'
+    - label: 'PC-only options: Open APH-Search settings > Guide.'
+    - label: 'Guide designs: Try every choice in Screen arrow design, Ground arrow design and Destination design with a waypoint set.'
+    - label: 'Map roads: Press Forget learned roads, then set a waypoint further along a road in a green zone such as Glenumbra or Deshaan. Then turn off Follow roads drawn on the map.'
+    - label: 'Record a road: In APH-Search settings > Guide, turn on Record the road I walk, walk a road, then turn it off.'
+    - label: 'Recorded road guide: Set a waypoint at the far end of the road you recorded and walk back to its start.'
+    - label: 'Other zone: Set a waypoint in another zone where you know a wayshrine.'
+    - label: 'Way into a zone: wayshrine: Search a place in a zone where you have discovered a wayshrine (for example Mournhold) and pick it.'
+    - label: 'Way into a zone: people: Search a place in a zone where you know no wayshrine but a friend, group member or guildmate is there, and pick it.'
+    - label: 'Way into a zone: house and dungeon: Search a place in a zone where you know no wayshrine and nobody you know is there, but you own or have visited a house, or found a dungeon or trial.'
+    - label: 'No way into a zone: Search a place in a zone where you have nothing at all (for example Shornhelm with no wayshrine, nobody there, no house or dungeon) and pick it.'
+    - label: 'Chat notes off: Turn off Chat Logs, then search a place you have no way into.'
+    - label: 'Reach a member: Follow a group member (Guide: Next Group Member) and walk right up to them, then let them walk away.'
+    - label: 'Marker in water: Drop a map marker in a lake or the sea a little away from the shore, then walk toward it.'
+    - label: 'Marker by walked stairs: Walk up a staircase (Vivec City''s canton stairs work), come back down, then drop a marker on the top landing.'
+    - label: 'Roads on other maps: Press Forget learned roads, then set a waypoint along a road in Coldharbour, Clockwork City, Fargrave or the Imperial City, and one across Vivec City''s bridges.'
+    - label: 'Whisper a friend: Search an online friend and pick Whisper.'
+    - label: 'Screen arrow position: Set Screen arrow position to Under my character, walk toward a waypoint, then set it to At the top of the screen.'
+    - label: 'Floor routes indoors: In a delve, dungeon or your house, press Forget learned roads and set a waypoint on the far side of the map.'
+    - label: 'Waypoint inside a cave: Go into Deep Sea Cavern (Gold Coast) or another cave, walk a few steps, then set a waypoint on the cave''s map.'
+    - label: 'No travel loop: Search a zone such as Gold Coast, decline the travel offer, follow the guide to your wayshrine and travel there.'
+    - label: 'Red dangerous buttons: Open the settings and look at Reset to Defaults, Delete recorded roads and Forget learned roads.'
+    - label: 'Map Data status: Open the Guide settings with and without APH-Search Map Data installed.'
+    - label: 'Search key in combat: Get into a fight and press the search keybind, then leave combat and press it again.'
+- type: textarea
+  id: notes
+  attributes:
+    label: Anything broken, partly working, or not tested
+    description: 'One line per issue: which test, what happened instead of Expected.'
+    placeholder: 'e.g. PC-L-04 Bug report: popup opened but API version line was blank'
