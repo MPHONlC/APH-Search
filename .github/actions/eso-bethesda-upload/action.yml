@@ -1,0 +1,51 @@
+name: 'ESO Bethesda Upload'
+description: 'Uploads an ESO console add-on to Bethesda.net; credentials reach the uploader whole, whatever characters they contain.'
+
+inputs:
+  BNET_USERNAME:
+    description: 'Bethesda.net username'
+    required: true
+  BNET_PASSWORD:
+    description: 'Bethesda.net password'
+    required: true
+  addon_id:
+    description: 'Bethesda.net add-on ID (the part of the mods.bethesda.net address after /details/)'
+    required: true
+  version:
+    description: 'Version shown on Bethesda.net'
+    required: true
+  zip_file:
+    description: 'Path to the add-on zip'
+    required: true
+  release_notes_file:
+    description: 'Path to the release notes (at most 10,000 bytes)'
+    required: true
+  concurrency:
+    description: 'Number of uploads at once'
+    required: false
+    default: '1'
+  publish:
+    description: "'false' uploads without publishing"
+    required: false
+    default: 'true'
+  cli_version:
+    description: "ESOAddOnUploaderCli release to use, or 'latest'"
+    required: false
+    default: '1.4.0'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Upload to Bethesda.net
+      shell: bash
+      env:
+        UPLOAD_BNET_USERNAME: ${{ inputs.BNET_USERNAME }}
+        UPLOAD_BNET_PASSWORD: ${{ inputs.BNET_PASSWORD }}
+        UPLOAD_ADDON_ID: ${{ inputs.addon_id }}
+        UPLOAD_VERSION: ${{ inputs.version }}
+        UPLOAD_ZIP_FILE: ${{ inputs.zip_file }}
+        UPLOAD_NOTES_FILE: ${{ inputs.release_notes_file }}
+        UPLOAD_CONCURRENCY: ${{ inputs.concurrency }}
+        UPLOAD_PUBLISH: ${{ inputs.publish }}
+        UPLOAD_CLI_VERSION: ${{ inputs.cli_version }}
+      run: python3 "$GITHUB_ACTION_PATH/bethesda_upload.py"

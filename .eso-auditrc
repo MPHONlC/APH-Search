@@ -1,0 +1,13 @@
+libraries = {
+    "LibAPH",
+}
+
+globals = {
+    "APHSearchCore",
+}
+
+reviewed_id64 = {
+    "UTILS/Travel.lua:GetFriendCharacterInfo",
+    "UTILS/Travel.lua:GetGuildMemberCharacterInfo",
+    "CORE/APH-Search.lua:CanCommunicateWith",
+}
