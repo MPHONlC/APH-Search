@@ -4,7 +4,7 @@
 ## Author: |ca500f3A|r|cb400e6P|r|cc300daH|r|cd200cdO|r|ce100c1NlC|r
 ## APIVersion: 101051 101052
 ## SavedVariables: APHSearch
-## DependsOn: LibAPH>=26100607
+## DependsOn: LibAPH>=26100717
 ## OptionalDependsOn: LibAddonMenu-2.0 LibHarvensAddonSettings
 ## Description: |cfa9c1bSearch settings, keybinds, add-ons, items, skills, champion stars, the map, quests, achievements and menus, then jump straight to it. Offers the closest way to travel to any place you find.|r |cCCFF00Usage: /fs <text> or Alt+S|r
 
