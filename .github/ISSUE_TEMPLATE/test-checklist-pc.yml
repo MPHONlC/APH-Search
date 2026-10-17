@@ -1,0 +1,86 @@
+name: "\u2705 APH-Search Test Checklist (PC)"
+description: Run through APH-Search's PC test checklist and report results
+title: '[TEST][PC] '
+labels:
+- testing
+assignees:
+- MPHONlC
+body:
+- type: markdown
+  attributes:
+    value: Thanks for testing **APH-Search** on PC! Check off everything you actually tested and confirmed working. Anything broken or partly working, describe it in the notes field at the end instead of checking it off.
+- type: input
+  id: version
+  attributes:
+    label: Add-on version
+    placeholder: e.g. 2026.09.29.21.48
+  validations:
+    required: true
+- type: dropdown
+  id: platform
+  attributes:
+    label: Platform
+    options:
+    - PC (NA)
+    - PC (EU)
+    - PC (PTS)
+  validations:
+    required: true
+- type: checkboxes
+  id: pc_tests
+  attributes:
+    label: PC tests confirmed working
+    options:
+    - label: 'Open: Press Alt+S, then /fs, then pick Search in the game menu.'
+    - label: 'Prefilled search: Type /fs camera. Then type /fs with nothing after it twice.'
+    - label: 'Search: Type ''camera''.'
+    - label: 'Jump highlight: Pick a setting result.'
+    - label: 'Recent searches: Search a few different words, close the bar and open it again.'
+    - label: 'Scopes: Press Tab a few times; right-click the scope label.'
+    - label: 'Scope settings: Settings > What gets searched: untick a scope.'
+    - label: 'Scope ticks: Open What gets searched and look at every tick: Settings, Keybinds, Add-ons, Add-on Settings, Commands, Menus, Achievements, Quests, Antiquities, Map, Wayshrines, Dungeons, Arenas, Trials, Houses, Skills, Champion, Titles, Emotes, Help, Items, Set Items, Collectibles, Allies, Tools, Outfit Styles, Friends, Leaderboards, Crown Store.'
+    - label: 'Keybinds: Search a keybind name (for example ''jump'').'
+    - label: 'Add-ons: Scope Add-ons: search an add-on.'
+    - label: 'Add-on settings: Scope Add-on Settings: search a setting from another add-on.'
+    - label: 'Commands: Scope Commands: search ''alc''.'
+    - label: 'Menus: Search ''inventory'' in Menus.'
+    - label: 'Achievements: Search an achievement name.'
+    - label: 'Quests: Search a quest you have; pick it.'
+    - label: 'Antiquities: Scope Antiquities: search an antiquity.'
+    - label: 'Map: Search a wayshrine, dungeon, trial and house.'
+    - label: 'Skills: Search a skill.'
+    - label: 'Champion: Search a champion star.'
+    - label: 'Collections: Search a collectible, ally, tool, outfit style.'
+    - label: 'Set Items: Search ''veiled'', then ''spell damage''.'
+    - label: 'Items: Search an item in your bag and in the craft bag.'
+    - label: 'Emotes: Search an emote; pick it.'
+    - label: 'Friends: Search a friend; whisper, then invite.'
+    - label: 'Leaderboards: Search a leaderboard.'
+    - label: 'Help / Crown: Search a help topic and a Crown Store item.'
+    - label: 'Titles: Search a title you own; pick it.'
+    - label: 'Chat messages: Pick a title you own, clear it, pick a quest with none tracked, and pick something that cannot be opened.'
+    - label: 'Bar drag and reset: Drag the search bar to a corner, reload, then press Reset Bar Position.'
+    - label: 'Bar opacity: Move the Bar opacity slider from 0 to 100.'
+    - label: 'Match tooltips: Turn Match tooltips and descriptions off and search a word only found in a description.'
+    - label: 'Prefer instant results: Turn Prefer instant results on and off and run a first search of a big scope (Items or Set Items).'
+    - label: 'Offer to travel: Turn Offer to travel from the map off and pick a quest, wayshrine and house.'
+    - label: 'Reset: Change several settings, then press Reset to Defaults.'
+    - label: 'First open: After login, check memory before and after the first search.'
+    - label: 'Cleanup: Close the bar after a big search.'
+    - label: 'Library Warning: On a fresh install (never seen this warning before), disable LibAddonMenu-2.0 (PC) or LibHarvensAddonSettings (console), then open Settings or reload twice in a row.'
+    - label: 'Way into a zone: wayshrine: Search a place in a zone where you have discovered a wayshrine (for example Mournhold) and pick it.'
+    - label: 'Way into a zone: people: Search a place in a zone where you know no wayshrine but a friend, group member or guildmate is there, and pick it.'
+    - label: 'Way into a zone: house and dungeon: Search a place in a zone where you know no wayshrine and nobody you know is there, but you own or have visited a house, or found a dungeon or trial.'
+    - label: 'No way into a zone: Search a place in a zone where you have nothing at all (for example Shornhelm with no wayshrine, nobody there, no house or dungeon) and pick it.'
+    - label: 'Map on another zone: Stand in Vivec City, search Mournhold and pick it, close the map, then open it again while it still shows Deshaan. Then switch it to Vvardenfell.'
+    - label: 'Clear recent searches: Search a few words, open the search bar''s list (down arrow on an empty box) and click the small bin icon on the RECENT header.'
+    - label: 'Chat notes off: Turn off Chat Logs, then search a place you have no way into.'
+    - label: 'No tooltips: Hover over every setting on the APH-Search settings panel.'
+    - label: 'Dangerous buttons: Hover the warning icons next to Reset Bar Position and Reset to Defaults, then click one.'
+    - label: 'Hidden collectible: In Collections turn off Show Locked, then search a locked collectible and pick it.'
+- type: textarea
+  id: notes
+  attributes:
+    label: Anything broken, partly working, or not tested
+    description: 'One line per issue: which test, what happened instead of Expected.'
+    placeholder: 'e.g. PC-L-04 Bug report: popup opened but API version line was blank'
