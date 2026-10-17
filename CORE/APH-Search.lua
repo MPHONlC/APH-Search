@@ -40,7 +40,7 @@ function SS.L(key, ...)
 	return text
 end
 
-SS.VERSION = "2026.10.15.14.36"
+SS.VERSION = "2026.10.18.01.41"
 SS.KEYBIND_LAYER = "APH-Search"
 
 local DEFAULTS = {
